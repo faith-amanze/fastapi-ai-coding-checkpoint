@@ -1,0 +1,77 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "ollama/llama3.2-1b-ctx",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": { "baseURL": "http://127.0.0.1:11434/v1" },
+      "models": {
+        "llama3.2-1b-ctx": { "name": "Llama 3.2 1B (8k context)" }
+      }
+    }
+  },
+  "instructions": [
+    "AGENTS.md",
+    ".opencode/memory.md",
+    ".opencode/rules/tests.md",
+    ".opencode/rules/docs.md"
+  ],
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "**/.env": "deny",
+      "**/.env.*": "deny",
+      "secrets/**": "deny",
+      "**/secrets/**": "deny",
+      "*.env.example": "allow"
+    },
+    "edit": {
+      "*": "ask",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "**/.env": "deny",
+      "**/.env.*": "deny",
+      "secrets/**": "deny",
+      "**/secrets/**": "deny"
+    },
+    "bash": {
+      "*": "ask",
+      "pytest": "allow",
+      "pytest *": "allow",
+      "python -m pytest *": "allow",
+      "git status": "allow",
+      "git status *": "allow",
+      "git diff": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
+      "env": "deny",
+      "env *": "deny",
+      "printenv *": "deny",
+      "set": "deny",
+      "set *": "deny",
+      "export *": "deny",
+      "*.env*": "deny",
+      "*$env:*": "deny",
+      "Get-ChildItem Env:*": "deny",
+      "gci Env:*": "deny",
+      "dir Env:*": "deny",
+      "rm *": "deny",
+      "del *": "deny",
+      "rmdir *": "deny",
+      "rd *": "deny",
+      "Remove-Item *": "deny",
+      "format *": "deny",
+      "sudo *": "deny",
+      "git push *": "deny",
+      "git reset --hard*": "deny",
+      "git clean *": "deny",
+      "curl *": "deny",
+      "wget *": "deny",
+      "Invoke-WebRequest *": "deny",
+      "iwr *": "deny"
+    }
+  }
+}
