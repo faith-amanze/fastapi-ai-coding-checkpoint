@@ -1,0 +1,48 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(./app/**)",
+      "Read(./tests/**)",
+      "Read(./docs/**)",
+      "Read(./reports/**)",
+      "Read(./CLAUDE.md)",
+      "Read(./pytest.ini)",
+      "Bash(pytest *)",
+      "Bash(python -m pytest *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Edit(./.env)",
+      "Edit(./.env.*)",
+      "Edit(./secrets/**)",
+      "Bash(env *)",
+      "Bash(printenv *)",
+      "Bash(export *)",
+      "Bash(set *)",
+      "Bash(cat .env*)",
+      "Bash(type .env*)",
+      "Bash(Get-Content .env*)",
+      "Bash(Get-ChildItem Env:*)",
+      "Bash(gci Env:*)",
+      "Bash(dir Env:*)",
+      "Bash(rm *)",
+      "Bash(Remove-Item *)",
+      "Bash(del *)",
+      "Bash(rmdir *)",
+      "Bash(rd *)",
+      "Bash(format *)",
+      "Bash(sudo *)",
+      "Bash(git push *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(Invoke-WebRequest *)"
+    ]
+  }
+}
