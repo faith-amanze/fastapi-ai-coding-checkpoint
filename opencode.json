@@ -5,9 +5,14 @@
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "Ollama (local)",
-      "options": { "baseURL": "http://127.0.0.1:11434/v1" },
+      "options": {
+        "baseURL": "http://127.0.0.1:11434/v1",
+        "timeout": 1800000
+      },
       "models": {
-        "llama3.2-3b-ctx": { "name": "Llama 3.2 3B (16k context)" }
+        "llama3.2-3b-ctx": {
+          "name": "Llama 3.2 3B (16k context)"
+        }
       }
     }
   },
@@ -75,4 +80,3 @@
     }
   }
 }
-
